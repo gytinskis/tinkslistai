@@ -1,9 +1,6 @@
 package com.informer.informer.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -22,15 +19,16 @@ public class User {
 
     private String email;
 
-    public Coordinates getCooedinates() {
+    public Location getCooedinates() {
         return cooedinates;
     }
 
-    public void setCooedinates(Coordinates cooedinates) {
+    public void setCooedinates(Location cooedinates) {
         this.cooedinates = cooedinates;
     }
 
-    private Coordinates cooedinates;
+    @OneToOne
+    private Location cooedinates;
 
     public String getEmail() {
         return email;
